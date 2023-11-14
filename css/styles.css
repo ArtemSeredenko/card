@@ -39,9 +39,13 @@ body {
   font-size: 16px;
   color: #000;
   font-family: "Montserrat", sans-serif;
+  background-image: url("../img/bg2.jpg");
+  background-size: cover; /* Позволяет изображению заполнять фон полностью */
+  background-position: center; /* Центрирует изображение по горизонтали и вертикали */
+  background-repeat: no-repeat;
 }
 
-.wrapper {
+.card__expanded__wrapper {
   min-height: 100%;
   overflow: hidden;
   display: flex;
@@ -49,56 +53,101 @@ body {
 
 .container {
   min-height: 100vh;
+  max-width: 1320px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  background-image: url("../img/bg2.jpg");
-  background-size: cover; /* Позволяет изображению заполнять фон полностью */
-  background-position: center; /* Центрирует изображение по горизонтали и вертикали */
-  background-repeat: no-repeat;
 }
 
-.card {
-  position: absolute;
-  width: 729px;
-  height: 485px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-right: 2px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  padding-top: 56px;
-  padding-left: 79px;
+.card__collapsed {
+  background-color: #141634;
+  width: 166px;
+  height: 455px;
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__collapsed__wrapper {
+  /* max-width: 121px; */
+  min-height: 100%;
   overflow: hidden;
-}
-.card__speaker__name {
-  color: #fff;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding-bottom: 32px;
+  display: flex;
 }
 
-.card__number {
+.card__collapsed__number {
   color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  padding-bottom: 32px;
+  padding: 38px 70px 17px 70px;
 }
 
-.card__button {
+.card__collapsed__decorative-line {
+  width: 120px;
+  height: 2px;
   background-color: #ff7a00;
-  padding: 8px 48px;
+  margin-left: 21px;
+}
+
+.card__collapsed__speaker__name {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  margin-top: 230px;
+  text-transform: uppercase;
+}
+
+.card__expanded {
+  /* position: absolute; */
+  width: 729px;
+  height: 455px;
+  padding-top: 46px;
+  padding-left: 69px;
+  overflow: hidden;
+}
+
+.card__collapsed,
+.card__expanded {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.card__expanded__speaker__name {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 25px;
+}
+
+.card__expanded__number {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  padding-bottom: 25px;
+}
+
+.card__expanded__button {
+  background-color: #ff7a00;
+  padding: 0 48px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
   color: #fff;
-  margin-bottom: 32px;
+  margin-bottom: 25px;
 }
 
 .card__speaker__description {
